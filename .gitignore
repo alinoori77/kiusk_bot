@@ -1,0 +1,47 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directory
+venv/
+env/
+.venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Pyrogram session strings
+*.session
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Unit test / coverage reports
+.coverage
+*.cover
+*.log
+*.pid
+*.tar.gz
+*.log
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# PyCharm project files
+.idea/
+
+# VSCode settings
+.vscode/
+
+# System-specific files
+.DS_Store
+Thumbs.db
+
+# Environment variables and settings
+.env
+.env.*
+.vscode/settings.json
