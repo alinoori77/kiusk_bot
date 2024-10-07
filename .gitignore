@@ -45,3 +45,7 @@ Thumbs.db
 .env
 .env.*
 .vscode/settings.json
+
+
+config.py
+test.py
