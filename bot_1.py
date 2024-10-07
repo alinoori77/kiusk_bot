@@ -4,11 +4,7 @@ from typing import List, Optional
 from pyrogram.types import Message
 import sqlite3
 
-from config import api_hash , api_id ,bot_token , phone_number
-
-SOURCE_CHANNEL = "fake_akharin"
-FIRST_TARGET_CHANNEL = "TestAchannelA"
-SECOND_TARGET_CHANNEL = "sendtochannel"
+from config import api_hash , api_id ,bot_token , phone_number , SOURCE_CHANNEL ,FIRST_TARGET_CHANNEL,SECOND_TARGET_CHANNEL
 
 TAGS_TO_REPLACE = [
     "@akharinkhabar | akharinkhabar.ir",
@@ -98,27 +94,6 @@ async def all_message(_:Client , m:Message ):
             message_id=m.id
             )
 
-@client.on_message(filters.chat(FIRST_TARGET_CHANNEL))
-async def edit_message(_: Client, message: Message):
-    """Handle incoming messages and replace tags if necessary."""
-    print("edit func")
-    # Handle text messages
-    if message.text:
-        modified_text = await replace_tags(message.text)
-        await client.edit_message_text(
-            FIRST_TARGET_CHANNEL,
-            message.id,
-            modified_text
-        )
-    
-    # Handle captions
-    if message.caption:
-        modified_caption = await replace_tags(message.caption)
-        await app.edit_message_caption(
-            config.target_channel,
-            message.id,
-            modified_caption
-        )
 
 
 client.run()
