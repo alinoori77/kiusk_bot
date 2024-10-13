@@ -4,7 +4,7 @@ from typing import List, Optional
 from pyrogram.types import Message
 
 
-from config import api_hash , api_id ,bot_token , phone_number , SOURCE_CHANNEL ,FIRST_TARGET_CHANNEL,SECOND_TARGET_CHANNEL
+from config import api_hash , api_id  , phone_number , SOURCE_CHANNEL ,FIRST_TARGET_CHANNEL,SECOND_TARGET_CHANNEL
 
 
 TAGS_TO_REPLACE = [
@@ -14,14 +14,6 @@ TAGS_TO_REPLACE = [
     "@Akharinkhabar | akharinkhabar.ir"
 ]
 REPLACEMENT_TAG = "@kiuskonline"
-
-
-proxy = {
-    "scheme": "http", 
-    "hostname": "127.0.0.1",
-    "port": 12334,
-
-}
 
 
 
@@ -38,14 +30,13 @@ def replace_tags(text: str) -> str:
     return modified_text
 
 
-client = Client("robot2", api_id, api_hash ,proxy=proxy , phone_number=phone_number)
-print("program started")
+client = Client("robot2", api_id, api_hash , phone_number=phone_number)
+print("program bot 2 started")
 
 
 @client.on_message(filters.chat(FIRST_TARGET_CHANNEL))
 async def edit_message(_: Client, message: Message):
     """Handle incoming messages and replace tags if necessary."""
-    print("edit func")
     # Handle text messages
     if message.text:
         modified_text = replace_tags(message.text)

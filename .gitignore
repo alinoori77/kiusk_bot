@@ -51,3 +51,4 @@ config.py
 test.py
 *.session-journal
 first_media_group_id
+second_media_group_id
